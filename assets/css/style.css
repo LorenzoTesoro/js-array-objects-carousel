@@ -1,39 +1,58 @@
-.slider {
-    position: relative;
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
 }
-  
-.slides img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;  
+body{
+  background-color: azure;
 }
-  
-  /* .slides img:not(img.active) {
-    display: none;
-  }
-  
-  .slides img.active {
-    display: block;
-  } */
-  
-.controls {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    translate: -50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+.container{
+  max-width: 1200px;
+  height:600px;
+  margin: 6rem auto;
+  position: relative;
 }
-  
-.prev,
-.next {
-    width: 2rem;
-    margin: 0.25rem;
-    background-color: whitesmoke;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    line-height: 2rem;
-    text-align: center;
-  }
+img{
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+}
+.container > a{
+  text-decoration: none;
+  background-color: lightgray;
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:black;
+}
+
+/* arrow */
+.arrow_up{
+  position: absolute;
+  top: 0.5rem;
+  left:570px;
+}
+
+.arrow_down{
+  position: absolute;
+  bottom: 0.7rem;
+  left:570px;
+}
+
+/* default display images */
+.container img{
+  display: none;
+}
+.container .card-body{
+  display: none;
+}
+/* active */
+img.active{
+  display: block;
+}
+.card-body.active{
+  display: block;
+}
