@@ -57,8 +57,6 @@ const carouselImages = images.forEach(image => {
         const activeText = document.querySelector(".card-body");
             activeText.classList.add("active");
     }
-
-    console.log(image);
 }); 
 
 
@@ -79,8 +77,16 @@ arrowDown.addEventListener('click', function (){
         thumbnails[activeText].classList.remove("active");
 
         // incremento il valore da prendere nell'array
-        activeImage++;
-        activeText ++;
+
+        if(activeImage == 4 || activeText == 4){
+            activeImage = 0;
+            activeText = 0;
+        }else{
+            activeImage++;
+            activeText++;
+        }
+
+       console.log(activeImage);
 
         // creo la variabile dell' immagine successiva
         const nextImg = images[activeImage];
@@ -89,7 +95,7 @@ arrowDown.addEventListener('click', function (){
         // aggiungere la classe active
         // do la classe active all'immagine successiva
         nextImg.classList.add('active');
-        nextThumbnail.classList.add('active')
+        nextThumbnail.classList.add('active') 
 })
 
 const arrowUp = document.querySelector(".arrow_up");
@@ -105,8 +111,13 @@ arrowUp.addEventListener('click', function (){
     thumbnails[activeText].classList.remove("active");
 
     // incremento il valore da prendere nell'array
-    activeImage--;
-    activeText--;
+    if(activeImage == 0 || activeText == 0){
+        activeImage = 4;
+        activeText = 4;
+    }else{
+        activeImage--;
+        activeText--;
+    }
 
     // creo la variabile dell' immagine successiva
     const nextImg = images[activeImage];
